@@ -1,0 +1,51 @@
+﻿@model JwtMvcAuthorization.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row text-center">
+    <div class="col-xs-12">
+        <h1>JWT MVC Authorization</h1>
+        <p>This is a simple example of how we could use JWT (JsonWebToken) to control the permission flow in our applications.</p>
+        <hr />
+    </div>
+</div>
+
+<div class="row margin-top-30">
+
+    <div class="col-xs-6">
+        <div class="row">
+
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "col-xs-12 form" })) {
+
+                <div class="form-group">
+                    <label class="control-label">Login as:</label>
+                    @Html.EnumDropDownListFor(model => model.Role, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            }
+
+            @using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { @class = "col-xs-12 form" })) {
+                <button type="submit" class="btn btn-danger">Logout</button>
+            }
+
+        </div>
+    </div>
+
+    <div class="col-xs-6">
+
+        <p>Pages for testing permissions:</p>
+        <ul class="list-unstyled">
+            <li>@Html.ActionLink("Go to Common User page", "CommonUserPage")</li>
+            <li>@Html.ActionLink("Go to Superuser page", "SuperuserPage")</li>
+            <li>@Html.ActionLink("Go to Administrator page", "AdministratorPage")</li>
+            <li>@Html.ActionLink("Go to Anonymous page", "AnonymousPage")</li>
+        </ul>
+
+    </div>
+
+</div>

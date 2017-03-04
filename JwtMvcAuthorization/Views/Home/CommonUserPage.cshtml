@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Common User";
+}
+
+<div class="row text-center">
+    <div class="col-xs-12">
+        <h1>Common User</h1>
+        <p>This is the page for common users.</p>
+        <hr />
+
+        <p>This page can be accessed by the following roles:</p>
+        <ul class="list-unstyled">
+            <li>Common User</li>
+            <li>Superuser</li>
+            <li>Administrator</li>
+        </ul>
+
+        <hr />
+        @Html.ActionLink("Go back to Index", "Index")
+    </div>
+</div>
+
