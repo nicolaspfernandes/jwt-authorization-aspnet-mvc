@@ -1,10 +1,10 @@
 ## JWT Authorization ASP.NET MVC
 
 Simple application in order to show how to use JWT to control authorization flow into applications.
-The authorization token is created based on a given role. It is sent to the requests through Authorization header attribute.
+The authorization token is created based on a given role. It is sent to the requests through cookies, storing the token information.
 
-The ActionFilter will check the headers in order to find an Authorization attribute with value and check it against the verification logic.
-If the request is denied, the response will send a **403 (Forbidden)** status back to the user.
+The ActionFilter will check the request cookies in order to find an Authorization cookie with value and check it against the verification logic.
+If the request is denied, the user will be redirected to a Forbidden page.
 
 ## Testing the application
 
